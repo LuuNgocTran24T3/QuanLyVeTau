@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QuanLyVeTau.Models;
-public class TrainController : Controller
+
+public class StationController : Controller
 {
     private readonly VeTauDbCaiTienContext _context;
-    public TrainController(VeTauDbCaiTienContext context)
+    public StationController(VeTauDbCaiTienContext context)
     {
         _context = context;
     }
@@ -16,7 +17,7 @@ public class TrainController : Controller
             return RedirectToAction("Login", "Account");
         }
 
-        var data = _context.Taus.ToList();
+        var data = _context.Gas.ToList();
         return View(data);
     }
 
@@ -28,9 +29,9 @@ public class TrainController : Controller
 
     // CREATE - POST
     [HttpPost]
-    public IActionResult Create(Tau model)
+    public IActionResult Create(Ga model)
     {
-        _context.Taus.Add(model);
+        _context.Gas.Add(model);
         _context.SaveChanges();
         return RedirectToAction("Index");
     }
@@ -38,15 +39,15 @@ public class TrainController : Controller
     // EDIT - GET
     public IActionResult Edit(int id)
     {
-        var data = _context.Taus.Find(id);
+        var data = _context.Gas.Find(id);
         return View(data);
     }
 
     // EDIT - POST
     [HttpPost]
-    public IActionResult Edit(Tau model)
+    public IActionResult Edit(Ga model)
     {
-        _context.Taus.Update(model);
+        _context.Gas.Update(model);
         _context.SaveChanges();
         return RedirectToAction("Index");
     }
@@ -54,8 +55,8 @@ public class TrainController : Controller
     // DELETE
     public IActionResult Delete(int id)
     {
-        var data = _context.Taus.Find(id);
-        _context.Taus.Remove(data);
+        var data = _context.Gas.Find(id);
+        _context.Gas.Remove(data);
         _context.SaveChanges();
         return RedirectToAction("Index");
     }
