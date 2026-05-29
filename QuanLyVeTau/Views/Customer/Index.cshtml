@@ -1,0 +1,40 @@
+﻿@model List<QuanLyVeTau.Models.KhachHang>
+
+<h2>Danh sách khách hàng</h2>
+
+<a href="/Customer/Create">
+    Thêm khách hàng
+</a>
+
+<table class="table">
+
+    <tr>
+        <th>ID</th>
+        <th>Tên khách hàng</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Id</td>
+
+            <td>@item.HoTen</td>
+
+            <td>
+
+                <a href="/Customer/Edit/@item.Id">
+                    Sửa
+                </a>
+
+                <a href="/Customer/Delete/@item.Id">
+                    Xóa
+                </a>
+
+            </td>
+
+        </tr>
+    }
+
+</table>
