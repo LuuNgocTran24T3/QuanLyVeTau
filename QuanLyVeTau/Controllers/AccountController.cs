@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QuanLyVeTau.Models;
+using QuanLyVeTau.Constants;
+using QuanLyVeTau.Hardcodes;
 
 namespace QuanLyVeTau.Controllers
 {
@@ -31,7 +33,7 @@ namespace QuanLyVeTau.Controllers
             if (customer != null)
             {
                 HttpContext.Session.SetString("userName", customer.HoTen);
-                HttpContext.Session.SetString("role", "Customer");
+                HttpContext.Session.SetString("role", SystemRole.Customer);
                 HttpContext.Session.SetString("userId", customer.Id.ToString());
                 return RedirectToAction("Index", "Home");
             }
@@ -44,13 +46,13 @@ namespace QuanLyVeTau.Controllers
             if (staff != null)
             {
                 HttpContext.Session.SetString("userName", staff.HoTen);
-                HttpContext.Session.SetString("role", "Staff");
+                HttpContext.Session.SetString("role", SystemRole.Staff);
                 HttpContext.Session.SetString("userId", staff.Id.ToString());
 
                 return RedirectToAction("Index", "Dashboard");
             }
 
-            ViewBag.Error = "Sai tài khoản hoặc mật khẩu";
+            ViewBag.Error = MessageConstant.LoginFail;
             return View();
         }
 
