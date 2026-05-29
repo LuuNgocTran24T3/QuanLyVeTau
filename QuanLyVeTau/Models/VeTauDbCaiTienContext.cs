@@ -15,7 +15,7 @@ public partial class VeTauDbCaiTienContext : DbContext
     {
     }
 
-    public virtual DbSet<BangGia> BangGia { get; set; }
+    public virtual DbSet<BangGia> BangGias { get; set; }
 
     public virtual DbSet<ChinhSachDoiTra> ChinhSachDoiTras { get; set; }
 
