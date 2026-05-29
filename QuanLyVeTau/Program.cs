@@ -15,6 +15,8 @@ builder.Services.AddDbContext<VeTauDbCaiTienContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
+builder.Services.AddHttpContextAccessor();
+
 var app = builder.Build();
 
 app.UseStaticFiles();
@@ -23,8 +25,12 @@ app.UseRouting();
 
 app.UseSession();
 
+app.UseMiddleware<AuthMiddleware>();
+
+app.UseAuthorization();
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Account}/{action=Login}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
