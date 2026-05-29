@@ -1,16 +1,16 @@
-﻿@model List<QuanLyVeTau.Models.Ga>
+﻿@model List<QuanLyVeTau.Models.Ghe>
 
-<h2>Danh sách ga</h2>
+<h2>Danh sách ghế</h2>
 
-<a href="/Station/Create">
-    Thêm ga
+<a href="/Seat/Create">
+    Thêm ghế
 </a>
 
 <table class="table">
 
     <tr>
         <th>ID</th>
-        <th>Tên ga</th>
+        <th>Số ghế</th>
         <th></th>
     </tr>
 
@@ -20,15 +20,15 @@
 
             <td>@item.Id</td>
 
-            <td>@item.TenGa</td>
+            <td>@item.SoGhe</td>
 
             <td>
 
-                <a href="/Station/Edit/@item.Id">
+                <a href="/Seat/Edit/@item.Id">
                     Sửa
                 </a>
 
-                <a href="/Station/Delete/@item.Id">
+                <a href="/Seat/Delete/@item.Id">
                     Xóa
                 </a>
 
