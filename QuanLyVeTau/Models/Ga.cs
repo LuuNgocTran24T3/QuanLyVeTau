@@ -19,9 +19,9 @@ public partial class Ga
 
     public string TrangThai { get; set; } = null!;
 
-    public virtual ICollection<BangGium> BangGiumGaDens { get; set; } = new List<BangGium>();
+    public virtual ICollection<BangGia> BangGiumGaDens { get; set; } = new List<BangGia>();
 
-    public virtual ICollection<BangGium> BangGiumGaDis { get; set; } = new List<BangGium>();
+    public virtual ICollection<BangGia> BangGiumGaDis { get; set; } = new List<BangGia>();
 
     public virtual ICollection<GiuCho> GiuChoGaDens { get; set; } = new List<GiuCho>();
 

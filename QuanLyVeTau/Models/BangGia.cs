@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace QuanLyVeTau.Models;
 
-public partial class BangGium
+public partial class BangGia
 {
     public int Id { get; set; }
 

@@ -15,7 +15,7 @@ public partial class VeTauDbCaiTienContext : DbContext
     {
     }
 
-    public virtual DbSet<BangGium> BangGia { get; set; }
+    public virtual DbSet<BangGia> BangGia { get; set; }
 
     public virtual DbSet<ChinhSachDoiTra> ChinhSachDoiTras { get; set; }
 
@@ -59,7 +59,7 @@ public partial class VeTauDbCaiTienContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<BangGium>(entity =>
+        modelBuilder.Entity<BangGia>(entity =>
         {
             entity.ToTable("BANG_GIA");
 
