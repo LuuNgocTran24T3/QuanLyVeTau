@@ -1,0 +1,40 @@
+﻿@model List<QuanLyVeTau.Models.ChuyenTau>
+
+<h2>Danh sách chuyến tàu</h2>
+
+<a href="/Trip/Create">
+    Thêm chuyến tàu
+</a>
+
+<table class="table">
+
+    <tr>
+        <th>ID</th>
+        <th>Tên chuyến tàu</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Id</td>
+
+            <td>@item.MaChuyen</td>
+
+            <td>
+
+                <a href="/Trip/Edit/@item.Id">
+                    Sửa
+                </a>
+
+                <a href="/Trip/Delete/@item.Id">
+                    Xóa
+                </a>
+
+            </td>
+
+        </tr>
+    }
+
+</table>

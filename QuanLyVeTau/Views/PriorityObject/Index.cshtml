@@ -1,0 +1,40 @@
+﻿@model List<QuanLyVeTau.Models.DoiTuongUuDai>
+
+<h2>Danh sách đối tượng ưu đãi</h2>
+
+<a href="/PriorityObject/Create">
+    Thêm đối tượng ưu đãi
+</a>
+
+<table class="table">
+
+    <tr>
+        <th>ID</th>
+        <th>Tên đối tượng ưu đãi</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Id</td>
+
+            <td>@item.TenDoiTuong</td>
+
+            <td>
+
+                <a href="/PriorityObject/Edit/@item.Id">
+                    Sửa
+                </a>
+
+                <a href="/PriorityObject/Delete/@item.Id">
+                    Xóa
+                </a>
+
+            </td>
+
+        </tr>
+    }
+
+</table>

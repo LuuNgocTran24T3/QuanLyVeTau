@@ -1,0 +1,40 @@
+﻿@model List<QuanLyVeTau.Models.ToaTau>
+
+<h2>Danh sách toa tàu</h2>
+
+<a href="/TrainCar/Create">
+    Thêm toa tàu
+</a>
+
+<table class="table">
+
+    <tr>
+        <th>ID</th>
+        <th>Số toa</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Id</td>
+
+            <td>@item.SoToa</td>
+
+            <td>
+
+                <a href="/TrainCar/Edit/@item.Id">
+                    Sửa
+                </a>
+
+                <a href="/TrainCar/Delete/@item.Id">
+                    Xóa
+                </a>
+
+            </td>
+
+        </tr>
+    }
+
+</table>

@@ -1,25 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
 using QuanLyVeTau.Models;
-using System.Diagnostics;
 
 namespace QuanLyVeTau.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly VeTauDbCaiTienContext _context;
+
+        public HomeController(VeTauDbCaiTienContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
-            return View();
-        }
+            ViewBag.TotalTrain = _context.Taus.Count();
+            ViewBag.TotalTicket = _context.Ves.Count();
+            ViewBag.TotalCustomer = _context.KhachHangs.Count();
 
-        public IActionResult Privacy()
-        {
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

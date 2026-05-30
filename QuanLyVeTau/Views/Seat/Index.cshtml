@@ -1,0 +1,40 @@
+﻿@model List<QuanLyVeTau.Models.Ghe>
+
+<h2>Danh sách ghế</h2>
+
+<a href="/Seat/Create">
+    Thêm ghế
+</a>
+
+<table class="table">
+
+    <tr>
+        <th>ID</th>
+        <th>Số ghế</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Id</td>
+
+            <td>@item.SoGhe</td>
+
+            <td>
+
+                <a href="/Seat/Edit/@item.Id">
+                    Sửa
+                </a>
+
+                <a href="/Seat/Delete/@item.Id">
+                    Xóa
+                </a>
+
+            </td>
+
+        </tr>
+    }
+
+</table>
